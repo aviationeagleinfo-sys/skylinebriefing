@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<style>
+    /* 1. VARIABILI E STILI GLOBALI (Palette Emirates: Oro e Rosso) */
+    :root {
+        /* Emirates Gold: #d71920 (Rosso) e #97824b (Oro) */
+        --ek-red: #d71920; 
+        --ek-gold: #97824b; 
+        --ek-gold-light: #b9a36a;
+        --light-bg: #f9f9f9;
+        --white: #ffffff;
+        --text-dark: #333333;
+    }
+
+    .ek-container {
+        max-width: 950px;
+        margin: 30px auto;
+        padding: 0 15px;
+        background-color: var(--white);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: var(--text-dark);
+        border-radius: 10px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+    }
+
+    /* ********** STILI GENERALI ********** */
+    
+    .header-dynamic { text-align: center; padding: 40px 0 30px; background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%); }
+    h1 { color: var(--ek-red); font-size: 2.8em; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+    .subtitle { color: var(--ek-gold); font-style: italic; margin-top: 10px; margin-bottom: 20px; font-size: 1.2em; font-weight: 500; }
+    section { padding: 35px 25px; border-bottom: 1px solid #eee; }
+    .section-title { color: var(--ek-red); font-size: 1.8em; border-left: 6px solid var(--ek-gold); padding-left: 15px; margin-bottom: 25px; }
+    p { line-height: 1.8; margin-bottom: 15px; font-size: 1.05em; }
+
+    /* Animazioni */
+    .logo-ek { height: 60px; width: auto; margin-bottom: 20px; opacity: 0; animation: fadeInDown 1s ease-out forwards; }
+    @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+    
+    /* BANNER IMMAGINE */
+    .image-banner { height: 350px; margin: 0; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 2.2em; font-weight: bold; text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7); position: relative; overflow: hidden; }
+    .image-banner img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .image-text { position: relative; z-index: 2; padding: 20px 40px; background-color: rgba(151, 130, 75, 0.4); border-radius: 5px; backdrop-filter: blur(3px); border: 1px solid rgba(255,255,255,0.3); }
+    
+    .highlight-box { background-color: #fff9eb; border-left: 5px solid var(--ek-gold); padding: 20px; margin: 25px 0; font-style: italic; color: #554a2c; }
+
+    /* ********** SEZIONE ALTRI MODELLI ********** */
+
+    .airlines-container {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: var(--light-bg);
+        border-top: 5px solid var(--ek-red);
+    }
+    
+    .airline-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--white);
+        color: var(--ek-red);
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 12px;
+        border-radius: 4px; /* Stile più squadrato ed elegante per EK */
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border: 2px solid var(--ek-gold);
+    }
+
+    .airline-button:hover {
+        background-color: #C9961A;
+        color: var(--white);
+        transform: translateY(-3px);
+        border-color: #C9961A;
+        box-shadow: 0 4px 12px rgba(215, 25, 32, 0.3);
+    }
+    
+    .airline-logo {
+        height: 22px; 
+        width: auto;
+        margin-right: 12px;
+        vertical-align: middle;
+    }
+
+    .airline-button.disabled {
+        background-color: #eee;
+        color: #999;
+        cursor: not-allowed;
+        opacity: 0.6;
+        border-color: #ccc;
+    }
+    .airline-button.disabled:hover { transform: none; box-shadow: none; }
+
+    /* SEZIONE CONTATTI FINALE */
+    .footer-request { padding: 40px 25px; background-color: #f0f0f0; text-align: center; border-top: 1px solid #ddd; }
+    .footer-request h4 { color: var(--ek-red); margin-bottom: 15px; font-size: 1.4em; }
+    .footer-request p { font-size: 0.95em; color: #555; max-width: 750px; margin: 0 auto 15px; }
+    .email-link { font-weight: bold; color: var(--ek-red); text-decoration: none; border-bottom: 1px solid transparent; transition: border 0.3s; }
+    .email-link:hover { border-bottom: 1px solid var(--ek-red); }
+
+</style>
+</head>
+<body>
+
+<div class="ek-container">
+
+    <header class="header-dynamic">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1200px-Emirates_logo.svg.png" alt="Logo Emirates" class="logo-ek">
+        <h1>Airbus A380: L'Eccellenza firmata Emirates</h1>
+        <p class="subtitle">Fly Better: L'icona del lusso globale e il cuore pulsante del network di Dubai.</p>
+    </header>
+
+    <div class="image-banner">
+        <img src="https://www.ainonline.com/cdn-cgi/image/width=3840,format=webp,quality=95/https://backend.ainonline.com/sites/default/files/styles/fpsc_1200x630/public/uploads/2019/07/ek380.jpg?h=8b31135d&itok=wbR43O-A" alt="Airbus A380 Emirates" loading="lazy">
+        <span class="image-text">Il Massimo del Comfort nei Cieli</span>
+    </div>
+
+    <section>
+        <h2 class="section-title">Emirates e l'A380: Un Binomio Indissolubile</h2>
+        <p>Emirates è il più grande operatore mondiale di **Airbus A380**, avendo fatto di questo gigante il simbolo del proprio successo globale. Con una flotta di oltre 100 esemplari, la compagnia ha trasformato l'aereo a doppio ponte in un vero e proprio hotel di lusso volante.</p>
+        
+        <p>A bordo degli A380 Emirates, l'esperienza di viaggio raggiunge vette ineguagliabili grazie alle **Private Suites** di First Class, alla celebre **Shower Spa** (la doccia di bordo) e all'esclusiva **Onboard Lounge**, dove i passeggeri di classe premium possono socializzare a 40.000 piedi di altezza.</p>
+        
+        <div class="highlight-box">
+            <strong>Innovazione Gastronomica:</strong> L'A380 di Emirates non è solo un aereo, ma una destinazione. Il sistema di intrattenimento <em>ice</em> ha vinto numerosi premi mondiali, offrendo migliaia di canali su schermi ad altissima risoluzione in tutte le classi.
+        </div>
+    </section>
+
+    <section style="background-color: var(--light-bg);">
+        <h2 class="section-title">Connettività Globale tramite Dubai</h2>
+        <p>Grazie all'eccezionale capacità dell'A380, Emirates collega Dubai con le principali metropoli del mondo, da Londra a New York, da Sydney a Roma. La sua efficienza su rotte ad alta densità permette di trasportare centinaia di passeggeri con un livello di comfort e silenziosità che solo il gigante di Airbus può offrire.</p>
+    </section>
+
+    <div class="airlines-container">
+        <h3>Altri Modelli nella Flotta Emirates</h3>
+        <p>Sebbene l'A380 sia l'ammiraglia, la flotta si sta evolvendo con nuovi arrivi altamente efficienti.</p>
+
+        <a href="#" class="airline-button" style="border-color: var(--ek-red);">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1200px-Emirates_logo.svg.png" alt="Logo EK" class="airline-logo">
+            A380 (L'Ammiraglia)
+        </a>
+
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1200px-Emirates_logo.svg.png" alt="Logo EK" class="airline-logo">
+            Boeing 777-300ER
+        </a>
+        
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1200px-Emirates_logo.svg.png" alt="Logo EK" class="airline-logo">
+            A350-900 (In Arrivo)
+        </a>
+
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1200px-Emirates_logo.svg.png" alt="Logo EK" class="airline-logo">
+            Boeing 777X
+        </a>
+    </div>
+
+    <div class="footer-request">
+        <h4>Richiesta di Inclusione nella Rubrica/Database</h4>
+        <p>
+            Se desiderate l'aggiunta di un nuovo <strong>Produttore</strong>, un <strong>Modello di Aereo</strong> specifico o una <strong>Compagnia Aerea</strong> all'interno della nostra rubrica o database di riferimento, vi preghiamo di inoltrare la vostra richiesta al seguente indirizzo:
+        </p>
+        <p>
+            <a href="mailto:campaign.aviationeagle.info@gmail.com" class="email-link">campaign.aviationeagle.info@gmail.com</a>
+        </p>
+        <p>Il nostro team valuterà l'inclusione e vi contatterà per eventuali chiarimenti.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
