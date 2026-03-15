@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<style>
+    /* 1. VARIABILI E STILI GLOBALI (Palette Airbus) */
+    :root {
+        --airbus-blue: #000078;
+        --airbus-light: #007bc1;
+        --highlight-color: #f7931e;
+        --light-bg: #f7f7f7;
+        --white: #ffffff;
+    }
+
+    .a320-container {
+        max-width: 950px;
+        margin: 30px auto;
+        padding: 0 15px;
+        background-color: var(--white);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* ********** STILI DELLE SEZIONI (Simili ad Airbus/Boeing) ********** */
+    
+    .header-dynamic { text-align: center; padding: 30px 0 20px; background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%); }
+    h1 { color: var(--airbus-blue); font-size: 2.8em; margin: 0; }
+    .subtitle { color: #666; font-style: italic; margin-top: 5px; margin-bottom: 20px; font-size: 1.1em; }
+    section { padding: 30px 20px; border-bottom: 1px solid #eee; }
+    .section-title { color: var(--airbus-blue); font-size: 1.8em; border-left: 5px solid var(--highlight-color); padding-left: 10px; margin-bottom: 20px; }
+    p { line-height: 1.7; margin-bottom: 15px; }
+    .image-banner { height: 300px; margin: 0; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 2em; font-weight: bold; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); position: relative; overflow: hidden; }
+    .image-banner img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .image-text { position: relative; z-index: 2; padding: 20px; background-color: rgba(0, 0, 0, 0.2); border-radius: 5px; }
+    
+    /* ****************************************************** */
+    /* STILI NUOVI: COMPAGNIE AEREE CON LOGO */
+    /* ****************************************************** */
+
+    .airlines-container {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: var(--light-bg);
+        border-top: 5px solid var(--airbus-light);
+    }
+    
+    .airline-button {
+        display: inline-flex; /* Allinea logo e testo sulla stessa linea */
+        align-items: center;
+        background-color: var(--white);
+        color: var(--airbus-blue);
+        text-decoration: none;
+        padding: 8px 15px;
+        margin: 10px;
+        border-radius: 30px; /* Pulsante a pillola */
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border: 2px solid var(--airbus-light);
+    }
+
+    .airline-button:hover {
+        background-color: var(--airbus-light);
+        color: var(--white);
+        transform: translateY(-2px);
+    }
+    
+    /* Stile per il LOGO della Compagnia Aerea */
+    .airline-logo {
+        height: 30px; /* Dimensione fissa del logo */
+        width: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+.airline-logo-big {
+        height: 40px; /* Dimensione fissa del logo */
+        width: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .airline-logo-superbig {
+        height: 50px; /* Dimensione fissa del logo */
+        width: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .airline-logo-small {
+        height: 20px; /* Dimensione fissa del logo */
+        width: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .airline-logo-medium {
+        height: 35px; /* Dimensione fissa del logo */
+        width: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    /* Classe per i pulsanti disattivati */
+    .airline-button.disabled {
+        background-color: #ccc;
+        color: #666;
+        cursor: not-allowed;
+        opacity: 0.7;
+        border-color: #999;
+    }
+    .airline-button.disabled:hover {
+         transform: none;
+         background-color: #ccc;
+         color: #666;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="a320-container">
+
+    <header class="header-dynamic">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Logo_Airbus_A320.svg/1200px-Logo_Airbus_A320.svg.png" alt="Logo A320" class="airline-logo-superbig">
+        <p> 
+        </p>
+        
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <p> 
+        </p>
+        <h1>Airbus A320 Family: Il Re del Corto e Medio Raggio</h1>
+        <p class="subtitle">La spina dorsale dell'aviazione moderna: affidabile, efficiente e onnipresente.</p>
+    </header>
+
+    <div class="image-banner">
+        <img src="https://images.aircharterservice.com/global/aircraft-guide/group-charter/airbus-a320-1.jpg" alt="Airbus A320neo in volo" loading="lazy">
+        
+        <span class="image-text">Il Modello Più Venduto di Airbus</span>
+    </div>
+    <section>
+        <h2 class="section-title">Rivoluzione Elettronica e Successo Commerciale</h2>
+        <p>L'A320, lanciato negli anni '80, è stato il primo aereo di linea commerciale a utilizzare un sistema di controllo di volo completamente digitale **(Fly-by-Wire)**. Questa innovazione ha portato a standard di sicurezza e di operatività che sono poi stati replicati da quasi tutti i concorrenti.</p>
+        
+        <p>Oggi, la versione **A320neo (New Engine Option)** continua questo successo con motori di ultima generazione che offrono una riduzione significativa del consumo di carburante e del rumore, rendendolo l'aereo di linea a corridoio singolo più ordinato al mondo.</p>
+        
+        <div class="highlight-box">
+            <strong>Dato Tecnico:</strong> La famiglia A320 (che include A318, A319, A320 e A321) condivide la stessa cabina di pilotaggio e procedure operative. Ciò consente ai piloti di passare da un modello all'altro con una formazione minima, un enorme vantaggio per le compagnie aeree.
+        </div>
+    </section>
+
+    <div class="airlines-container">
+        <h3>Gli Operatori Principali della Famiglia A320</h3>
+        <p>L'A320 è il cavallo di battaglia per il cortoraggio di centinaia di vettori in tutto il mondo. Clicca per vedere la flotta e le rotte di:</p>
+
+        <a href="pagina-inesistente" class="airline-button disabled">
+            A320 di 
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lufthansa_Logo_2018.svg/2560px-Lufthansa_Logo_2018.svg.png" alt="Logo Lufthansa" class="airline-logo-small">
+        </a>
+
+<a href="airbus/a320/globalx" class="airline-button">
+            A320 di 
+            
+            <img src="https://assets.planespotters.net/files/airlines/9/global-x_6510b9_opk.png" alt="Logo Global X" class="airline-logo">
+        </a>        
+<a href="pagina-inesistente" class="airline-button disabled">
+            A320 di 
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wizz_Air_logo.svg/2560px-Wizz_Air_logo.svg.png" alt="Logo Wizz" class="airline-logo">
+        </a>
+        
+        <a href="pagina-inesistente" class="airline-button disabled">
+            A320 di 
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EasyJet_logo.svg/2560px-EasyJet_logo.svg.png" alt="Logo EasyJet" class="airline-logo-small">
+        </a>
+        <a href="pagina-inesistente" class="airline-button disabled">
+            A320 di 
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/TAP_Air_Portugal_logo.svg" alt="Logo Tap" class="airline-logo-big">
+        </a>
+        <a href="airbus/a320/ita" class="airline-button">
+            A320 di 
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/ITA_Airways_Logo.svg/1280px-ITA_Airways_Logo.svg.png" alt="Logo Ita" class="airline-logo-medium">
+        </a>
+        </div>
+    </div>
+
+</body>
+</html>
