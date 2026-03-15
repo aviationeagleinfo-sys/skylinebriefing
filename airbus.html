@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<style>
+    /* 1. VARIABILI E STILI GLOBALI */
+    :root {
+        --airbus-blue: #000078; 
+        --airbus-light: #007bc1; 
+        --highlight-color: #f7931e;
+        --light-bg: #f7f7f7;
+        --white: #ffffff;
+    }
+
+    .airbus-container {
+        max-width: 950px;
+        margin: 30px auto;
+        padding: 0 15px;
+        background-color: var(--white);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* 2. HEADER E LOGO DINAMICO */
+    .header-dynamic {
+        text-align: center;
+        padding: 30px 0 20px;
+        background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%);
+    }
+
+    .logo-placeholder {
+        height: 50px;
+        width: auto;
+        margin-bottom: 15px;
+        opacity: 0;
+        animation: fadeInDown 1s ease-out 0.3s forwards;
+    }
+
+    @keyframes fadeInDown {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        color: var(--airbus-blue);
+        font-size: 2.8em;
+        margin: 0;
+    }
+
+    .subtitle {
+        color: #666;
+        font-style: italic;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        font-size: 1.1em;
+    }
+    
+    /* 3. SEZIONI E ANIMAZIONI */
+    section {
+        padding: 30px 20px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .section-title {
+        color: var(--airbus-blue);
+        font-size: 1.8em;
+        border-left: 5px solid var(--highlight-color);
+        padding-left: 10px;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeIn 1s ease-out 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    p {
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+    
+    .highlight-box {
+        background-color: #e6f7ff;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 25px 0;
+        border: 1px solid var(--airbus-light);
+        opacity: 0;
+        transform: scale(0.95);
+        animation: scaleIn 1s ease-out 0.8s forwards;
+    }
+
+    @keyframes scaleIn {
+        0% { opacity: 0; transform: scale(0.95); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+    
+    /* ****************************************************** */
+    /* 4. BANNER IMMAGINE (USA TAG IMG - SOLUZIONE ROBUSTA)  */
+    /* ****************************************************** */
+    .image-banner {
+        height: 300px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 2em;
+        font-weight: bold;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+        position: relative; 
+        overflow: hidden; 
+    }
+
+    .image-banner img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* ESSENZIALE: Garantisce la copertura senza distorsione */
+        z-index: 1; 
+    }
+    
+    .image-text {
+        position: relative;
+        z-index: 2; 
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.2); 
+        border-radius: 5px;
+    }
+
+    /* 5. PULSANTI DINAMICI */
+    .model-buttons-container {
+        text-align: center;
+        padding: 30px 20px 40px;
+        background-color: var(--light-bg);
+        border-radius: 0 0 10px 10px;
+    }
+
+    .model-buttons-container h3 {
+        color: var(--airbus-blue);
+        margin-bottom: 20px;
+    }
+
+    .model-button {
+        display: inline-block;
+        background-color: var(--airbus-light);
+        color: var(--white);
+        text-decoration: none;
+        padding: 10px 18px;
+        margin: 8px;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border: none;
+        cursor: pointer;
+    }
+
+    .model-button:hover:not(.disabled) {
+        background-color: #004d80;
+        transform: translateY(-2px);
+    }
+
+    /* CLASSI PER ATTIVAZIONE/DISATTIVAZIONE */
+    .model-button.disabled {
+        background-color: #ccc;
+        color: #666;
+        cursor: not-allowed;
+        opacity: 0.7;
+        box-shadow: none;
+    }
+    
+    .model-button.hidden {
+        display: none !important;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="airbus-container">
+
+    <header class="header-dynamic">
+        <img src="https://upload.wikimedia.org/wikipedia/it/2/23/Airbus-logo.svg" alt="Logo Airbus" class="logo-placeholder">
+        
+        <h1>Airbus: L'Architetto del Futuro Aerospaziale</h1>
+        <p class="subtitle">Innovazione Europea nel Cielo, Nello Spazio e nella Difesa.</p>
+    </header>
+
+    <div class="image-banner">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/26-MAR-2023_-_AZ609_JFK-FCO_%28A350-900_-_EI-IFA%29_%2801%29.jpg" alt="ITA Airways A350 XWB" loading="lazy">
+        
+        <span class="image-text">Tecnologia e Efficienza in Volo</span>
+    </div>
+    <section>
+        <h2 class="section-title">Nascita di un Gigante Europeo</h2>
+        <p>Le radici di Airbus affondano nella cooperazione europea degli anni '70, con l'obiettivo ambizioso di competere con i produttori aerospaziali statunitensi. Questa collaborazione transnazionale ha dato vita a un'azienda che oggi definisce gli standard globali in tre settori chiave:</p>
+        
+        <div class="highlight-box">
+            <p><strong>Dato Cruciale:</strong> Airbus è stata pioniere nell'introduzione della tecnologia *fly-by-wire* nei suoi aerei di linea (come l'A320), un sistema di controllo interamente elettronico che ha rivoluzionato la sicurezza e l'efficienza del volo.</p>
+        </div>
+        
+        <h2 class="section-title">Le Tre Ali dell'Innovazione</h2>
+        <ul>
+            <li><strong>Airbus Commercial Aircraft:</strong> Il core business, responsabile della celebre famiglia di aerei di linea, tra cui il best-seller A320neo e il wide-body di ultima generazione, l'A350.</li>
+            <li><strong>Airbus Defence and Space:</strong> Si concentra su velivoli militari, sistemi missilistici e satelliti, garantendo la sicurezza e le capacità spaziali in Europa e oltre.</li>
+            <li><strong>Airbus Helicopters:</strong> Leader mondiale nella produzione di elicotteri, fornendo soluzioni per emergenze, trasporto VIP e supporto militare.</li>
+        </ul>
+    </section>
+
+    <section style="background-color: var(--light-bg);">
+        <h2 class="section-title">L'Efficienza (neo) e l'Eredità del Wide-Body</h2>
+        <p>Il successo commerciale di Airbus si basa in gran parte sulla famiglia A320, rinnovata con l'opzione **'neo' (New Engine Option)**. Questi motori di nuova generazione riducono il consumo di carburante e le emissioni acustiche, rendendo i viaggi aerei più sostenibili.</p>
+        <p>Nel lungo raggio, l'**A350 XWB** rappresenta l'apice della tecnologia, con la fusoliera costruita quasi interamente con materiali compositi in fibra di carbonio. Sebbene la produzione del gigante **A380** sia terminata, la sua eredità come aereo passeggeri più grande del mondo continua a simboleggiare l'ambizione europea.</p>
+    </section>
+
+    <div class="model-buttons-container">
+        <h3>Approfondisci i Modelli di punta</h3>
+        <p>Clicca sul modello di interesse per saperne di più (i link non attivi sono grigi).</p>
+
+        <a href="pagina-inesistente" class="model-button disabled">A220 (Ex-Bombardier)</a>
+        <a href="airbus/a320" class="model-button">A320 Family</a>
+        
+        <a href="pagina-inesistente" class="model-button disabled">A330 / A330neo</a>
+        <a href="pagina-inesistente" class="model-button disabled">A350 XWB (Compositi)</a>
+        
+        <a href="airbus/a380" class="model-button">A380 (Eredità Jumbo)</a>
+
+        <a href="pagina-inesistente" class="model-button hidden">A400M (Trasporto Militare)</a>
+    </div>
+
+</div>
+
+</body>
+</html>
