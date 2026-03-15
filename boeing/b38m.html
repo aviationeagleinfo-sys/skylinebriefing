@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<style>
+    /* 1. VARIABILI E STILI GLOBALI (Palette RYANAIR / BOEING B38M) */
+    :root {
+        --ryanair-blue: #08214f; /* Blu Scuro Ryanair */
+        --ryanair-yellow: #f5b700; /* Giallo Ryanair */
+        --highlight-color: #007bc1; /* Blu Chiaro per contrasto (ex-Airbus light) */
+        --light-bg: #f7f7f7;
+        --white: #ffffff;
+    }
+
+    .b38m-container {
+        max-width: 950px;
+        margin: 30px auto;
+        padding: 0 15px;
+        background-color: var(--white);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* ********** STILI DELLE SEZIONI (Adattati al B38M) ********** */
+    
+    .header-dynamic { text-align: center; padding: 30px 0 20px; background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%); }
+    h1 { color: var(--ryanair-blue); font-size: 2.8em; margin: 0; }
+    .subtitle { color: #666; font-style: italic; margin-top: 5px; margin-bottom: 20px; font-size: 1.1em; }
+    section { padding: 30px 20px; border-bottom: 1px solid #eee; }
+    .section-title { color: var(--ryanair-blue); font-size: 1.8em; border-left: 5px solid var(--ryanair-yellow); padding-left: 10px; margin-bottom: 20px; }
+    p { line-height: 1.7; margin-bottom: 15px; }
+    .image-banner { height: 300px; margin: 0; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 2em; font-weight: bold; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); position: relative; overflow: hidden; }
+    .image-banner img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .image-text { position: relative; z-index: 2; padding: 20px; background-color: rgba(0, 0, 0, 0.3); border-radius: 5px; }
+    
+    /* ****************************************************** */
+    /* STILI NUOVI: COMPAGNIE AEREE CON LOGO */
+    /* ****************************************************** */
+
+    .airlines-container {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: var(--light-bg);
+        border-top: 5px solid var(--ryanair-blue); /* Linea di divisione Blu Ryanair */
+    }
+    
+    .airline-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--white);
+        color: var(--ryanair-blue);
+        text-decoration: none;
+        padding: 8px 15px;
+        margin: 10px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border: 2px solid var(--ryanair-yellow); /* Bordo Giallo Ryanair */
+    }
+
+    .airline-button:hover:not(.disabled) {
+        background-color: var(--ryanair-yellow);
+        color: var(--ryanair-blue);
+        transform: translateY(-2px);
+    }
+    
+    /* Stile per il LOGO della Compagnia Aerea */
+    .airline-logo-superbig { height: 50px; width: auto; margin-right: 10px; vertical-align: middle; }
+    .airline-logo-medium { height: 35px; width: auto; margin-right: 10px; vertical-align: middle; }
+    .airline-logo-small { height: 20px; width: auto; margin-right: 10px; vertical-align: middle; }
+    .airline-logo-big { height: 40px; width: auto; margin-right: 10px; vertical-align: middle; }
+
+    /* Classe per i pulsanti disattivati */
+    .airline-button.disabled {
+        background-color: #ccc;
+        color: #666;
+        cursor: not-allowed;
+        opacity: 0.7;
+        border-color: #999;
+    }
+    .airline-button.disabled:hover {
+          transform: none;
+          background-color: #ccc;
+          color: #666;
+    }
+
+    .highlight-box-b38m {
+        background-color: #fffae0; /* Giallo molto chiaro */
+        border-radius: 8px;
+        padding: 20px;
+        margin: 25px 0;
+        border: 1px solid var(--ryanair-yellow);
+    }
+
+</style>
+</head>
+<body>
+
+<div class="b38m-container">
+
+    <header class="header-dynamic">
+        <img src="https://simplyjet-prod-ch.s3.eu-central-2.amazonaws.com/website/aircraft-cms/1718696987743~737.png" alt="Logo Boeing 737 MAX" class="airline-logo-superbig" style="height: 60px;">
+        <p style="margin: 0;"></p>
+        
+        <h1>Boeing 737 MAX 8-200 (B38M)</h1>
+        <p class="subtitle">Il "Gamechanger": la spina dorsale ad alta efficienza per le Low-Cost.</p>
+    </header>
+
+    <div class="image-banner">
+        <img src="https://photos.flightaware.com/photos/retriever/f68481d1a287675831866acfa03acf6351dd9137" alt="Boeing 737 MAX 8-200 Ryanair" loading="lazy">
+        
+        <span class="image-text">197 Posti, -16% Consumo di Carburante</span>
+    </div>
+    <section>
+        <h2 class="section-title">L'Ottimizzazione della Cabina per il Vettore</h2>
+        <p>Il **B737 MAX 8-200**, chiamato da Ryanair "Gamechanger", è una variante esclusiva del MAX 8 progettata per massimizzare l'efficienza sui voli a corto raggio. La sua caratteristica più distintiva è l'aumento della capacità a **197 passeggeri**, dieci in più rispetto al precedente 737-800 NG.</p>
+        
+        <p>Per raggiungere questa densità, Boeing ha dovuto includere due **uscite di emergenza aggiuntive** (una davanti e una dietro le ali) per soddisfare i requisiti di evacuazione. Questo garantisce che l'aereo mantenga gli standard di sicurezza pur offrendo la massima redditività per posto a sedere.</p>
+        
+        <div class="highlight-box-b38m">
+            <strong>Vantaggio Operativo:</strong> Grazie ai motori **CFM LEAP-1B** di nuova generazione e alle innovative *Advanced Technology Winglets*, il B38M offre un **risparmio di carburante del 16%** e una riduzione dell'impronta acustica del 40% rispetto ai modelli precedenti.
+        </div>
+    </section>
+
+    <div class="airlines-container">
+        <h3>Gli Operatori Principali del MAX e del B38M</h3>
+        <p>Ryanair è il cliente di lancio della versione 8-200. Ecco alcuni dei maggiori operatori globali della famiglia 737 MAX:</p>
+
+        <a href="boeing/b38m/ryanair" class="airline-button" style="border-color: var(--ryanair-blue); background-color: var(--ryanair-yellow);">
+            <img src="https://1000logos.net/wp-content/uploads/2020/03/Ryanair-Logo.png" alt="Logo Ryanair" class="airline-logo-medium" style="filter: brightness(0.2);">
+            Ryanair (B38M)
+        </a>
+        
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Southwest_Airlines_logo_2014.svg/1200px-Southwest_Airlines_logo_2014.svg.png" alt="Logo Southwest" class="airline-logo-medium">
+            Southwest (MAX 8)
+        </a>
+        
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://1000logos.net/wp-content/uploads/2020/04/FlyDubai-Logo.png" alt="Logo Flydubai" class="airline-logo-medium">
+            Flydubai (MAX 8)
+        </a>
+        
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://upload.wikimedia.org/wikipedia/it/thumb/2/23/American_Airlines_logo_2013.svg/2560px-American_Airlines_logo_2013.svg.png" alt="Logo American" class="airline-logo-medium">
+            American (MAX 8)
+        </a>
+        
+        <p style="margin-top: 20px; font-size: 0.9em; color: #666;">
+            Il B38M è quasi identico al B737 MAX 8 standard (178 posti), ma richiede un'addestramento specifico per le procedure di evacuazione delle 197 persone.
+        </p>
+
+        </div>
+    </div>
+
+</body>
+</html>
