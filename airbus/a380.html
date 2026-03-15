@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 1. VARIABILI E STILI GLOBALI (Palette Airbus) */
+        :root {
+            --airbus-blue: #000078;
+            --airbus-light: #007bc1;
+            --highlight-color: #f7931e;
+            --light-bg: #f7f7f7;
+            --white: #ffffff;
+        }
+
+        .a380-container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 0 15px;
+            background-color: var(--white);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* STILI DELLE SEZIONI */
+        .header-dynamic { text-align: center; padding: 30px 0 20px; background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%); }
+        h1 { color: var(--airbus-blue); font-size: 2.8em; margin: 0; }
+        .subtitle { color: #666; font-style: italic; margin-top: 5px; margin-bottom: 20px; font-size: 1.1em; }
+        section { padding: 30px 20px; border-bottom: 1px solid #eee; }
+        .section-title { color: var(--airbus-blue); font-size: 1.8em; border-left: 5px solid var(--highlight-color); padding-left: 10px; margin-bottom: 20px; }
+        p { line-height: 1.7; margin-bottom: 15px; }
+        
+        .image-banner { height: 350px; margin: 0; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 2em; font-weight: bold; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8); position: relative; overflow: hidden; }
+        .image-banner img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        .image-text { position: relative; z-index: 2; padding: 20px; background-color: rgba(0, 0, 0, 0.3); border-radius: 5px; }
+        
+        .highlight-box { background-color: #eef7ff; border-left: 5px solid var(--airbus-light); padding: 15px; margin: 20px 0; font-style: italic; }
+
+        /* COMPAGNIE AEREE */
+        .airlines-container { text-align: center; padding: 40px 20px; background-color: var(--light-bg); border-top: 5px solid var(--airbus-light); }
+        .airline-button { display: inline-flex; align-items: center; background-color: var(--white); color: var(--airbus-blue); text-decoration: none; padding: 8px 15px; margin: 10px; border-radius: 30px; font-weight: bold; transition: all 0.3s ease; border: 2px solid var(--airbus-light); }
+        .airline-button:hover { background-color: var(--airbus-light); color: var(--white); transform: translateY(-2px); }
+        
+        /* LOGHI */
+        .airline-logo, .airline-logo-small, .airline-logo-medium, .airline-logo-big, .airline-logo-superbig { width: auto; vertical-align: middle; margin-right: 10px; }
+        .airline-logo { height: 30px; }
+        .airline-logo-small { height: 20px; }
+        .airline-logo-medium { height: 35px; }
+        .airline-logo-big { height: 40px; }
+        .airline-logo-superbig { height: 50px; }
+
+        .disabled { background-color: #ccc !important; color: #666 !important; cursor: not-allowed; opacity: 0.7; border-color: #999 !important; }
+
+        /* SEZIONE CONTATTI FINALE */
+        .footer-request { padding: 40px 20px; background-color: #f0f0f0; text-align: center; border-top: 1px solid #ddd; }
+        .footer-request h4 { color: var(--airbus-blue); margin-bottom: 15px; font-size: 1.4em; }
+        .footer-request p { font-size: 0.95em; color: #555; max-width: 700px; margin: 0 auto 15px; }
+        .email-link { font-weight: bold; color: var(--airbus-light); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="a380-container">
+
+    <header class="header-dynamic">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Logo_Airbus_A380.svg/1200px-Logo_Airbus_A380.svg.png" alt="Logo A380" class="airline-logo-superbig">
+        <h1></p>
+        </h1>
+        <h1>Airbus A380: Il Gigante dei Cieli</h1>
+        <p class="subtitle">L'unico aereo a doppio ponte integrale: un capolavoro di ingegneria per il lungo raggio.</p>
+    </header>
+
+    <div class="image-banner">
+        <img src="https://ba.scene7.com/is/image/ba/airbus-a380-inflight-cloudscape:16-9?ts=1766227685792&dpr=off" alt="Airbus A380 in volo" loading="lazy">
+        <span class="image-text">L'Aereo Passeggeri più Grande del Mondo</span>
+    </div>
+
+    <section>
+        <h2 class="section-title">Un'Icona di Comfort e Capacità</h2>
+        <p>L'Airbus A380 ha ridefinito l'esperienza di volo nel 21° secolo. Grazie alla sua configurazione a **doppio ponte (double-deck)**, offre uno spazio senza precedenti, permettendo alle compagnie aeree di installare suite di lusso, bar a bordo e persino docce nelle classi premium.</p>
+        
+        <p>Progettato per decongestionare gli hub aeroportuali più trafficati del mondo, l'A380 è in grado di trasportare oltre **500 passeggeri** in una configurazione standard a tre classi, o fino a 853 in una configurazione ad alta densità, mantenendo una silenziosità in cabina che resta ancora oggi un punto di riferimento.</p>
+        
+        <div class="highlight-box">
+            <strong>Dato Tecnico:</strong> L'A380 ha un'apertura alare di quasi 80 metri e una superficie alare progettata per un peso massimo al decollo (MTOW) di 575 tonnellate. I suoi quattro motori (Rolls-Royce Trent 900 o Engine Alliance GP7000) forniscono la spinta necessaria per rotte ultra-lunghe fino a 15.000 km.
+        </div>
+    </section>
+
+    <div class="airlines-container">
+        <h3>Gli Operatori Principali dell'A380</h3>
+        <p>Sebbene la produzione sia terminata, l'A380 rimane l'ammiraglia di molte compagnie d'élite. Scopri le loro flotte:</p>
+
+        <a href="airbus/a380/emirates" class="airline-button">
+            A380 di 
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1200px-Emirates_logo.svg.png" alt="Logo Emirates" class="airline-logo">
+        </a>
+
+        <a href="pagina-inesistente" class="airline-button disabled">
+            A380 di 
+            <img src="https://1000logos.net/wp-content/uploads/2020/04/Singapore-Airlines-Logo.png" alt="Logo Singapore" class="airline-logo-medium">
+        </a> 
+
+        <a href="pagina-inesistente" class="airline-button disabled">
+            A380 di 
+            <img src="https://upload.wikimedia.org/wikipedia/it/thumb/4/42/British_Airways_Logo.svg/2560px-British_Airways_Logo.svg.png" alt="Logo BA" class="airline-logo-small">
+        </a>
+        
+        <a href="pagina-inesistente" class="airline-button disabled">
+            A380 di 
+            <img src="https://www.professionevolare.it/wp-content/uploads/2023/10/Qatar-Airways-Logo.png" alt="Logo Qatar" class="airline-logo">
+        </a>
+
+        <a href="pagina-inesistente" class="airline-button disabled">
+            A380 di 
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lufthansa_Logo_2018.svg/1280px-Lufthansa_Logo_2018.svg.png" alt="Logo Lufthansa" class="airline-logo-small">
+        </a>
+    </div>
+
+    <div class="footer-request">
+        <h4>Richiesta di Inclusione nella Rubrica/Database</h4>
+        <p>
+            Se desiderate l'aggiunta di un nuovo <strong>Produttore</strong>, un <strong>Modello di Aereo</strong> specifico o una <strong>Compagnia Aerea</strong> all'interno della nostra rubrica o database di riferimento, vi preghiamo di inoltrare la vostra richiesta al seguente indirizzo:
+        </p>
+        <p>
+            <a href="mailto:campaign.aviationeagle.info@gmail.com" class="email-link">campaign.aviationeagle.info@gmail.com</a>
+        </p>
+        <p>Il nostro team valuterà l'inclusione e vi contatterà per eventuali chiarimenti.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
