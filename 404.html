@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<style>
+    /* 1. VARIABILI E STILI GLOBALI (Coerenza con Airbus/Ryanair) */
+    :root {
+        --error-red: #ff4a4a; /* Rosso d'errore */
+        --airbus-blue: #000078;
+        --airbus-light: #007bc1;
+        --white: #ffffff;
+    }
+
+    .error-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 40px;
+        background-color: var(--white);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border-top: 5px solid var(--error-red); /* Barra d'errore */
+    }
+
+    .error-icon {
+        color: var(--error-red);
+        font-size: 4em;
+        margin-bottom: 20px;
+        display: block;
+        animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both; /* Animazione leggera */
+    }
+
+    /* Animazione per l'icona (simula uno scossone) */
+    @keyframes shake {
+        10%, 90% { transform: translate3d(-1px, 0, 0); }
+        20%, 80% { transform: translate3d(2px, 0, 0); }
+        30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+        40%, 60% { transform: translate3d(4px, 0, 0); }
+    }
+
+    .error-title {
+        color: var(--airbus-blue);
+        font-size: 2em;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .error-message {
+        font-size: 1.1em;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    /* Stile del pulsante "Torna Indietro" */
+    .back-button {
+        display: inline-block;
+        background-color: var(--airbus-light);
+        color: var(--white);
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border: none;
+    }
+
+    .back-button:hover {
+        background-color: var(--airbus-blue);
+        transform: translateY(-1px);
+    }
+</style>
+</head>
+<body>
+
+<div class="error-container">
+    
+    <span class="error-icon">!</span>
+    
+    <div class="error-title">OPS!</div>
+    
+    <p class="error-message">
+        <strong>QUESTA PAGINA O SEZIONE NON È ANCORA PRESENTE.</strong><br>
+        Stiamo lavorando per renderla disponibile il prima possibile.
+    </p>
+
+    <button class="back-button" onclick="history.back()">
+        &larr; Torna alla Pagina Precedente
+    </button>
+</div>
+
+</body>
+</html>
