@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    /* 1. VARIABILI E STILI GLOBALI (Palette Global X: Nero, Rosso, Grigio) */
+    :root {
+        --globalx-dark: #000000; /* Nero Istituzionale Global X */
+        --globalx-red: #cc0000; /* Rosso Acceso Global X */
+        --highlight-color: #f7931e; /* Arancione/Giallo per l'enfasi (Mantenuto) */
+        --light-bg: #f2f2f2; /* Grigio chiaro */
+        --white: #ffffff;
+    }
+
+    .globalx-container {
+        max-width: 950px;
+        margin: 30px auto;
+        padding: 0 15px;
+        background-color: var(--white);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* ********** STILI GENERALI ********** */
+    
+    .header-dynamic { text-align: center; padding: 30px 0 20px; background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%); }
+    h1 { color: var(--globalx-dark); font-size: 2.8em; margin: 0; }
+    .subtitle { color: #666; font-style: italic; margin-top: 5px; margin-bottom: 20px; font-size: 1.1em; }
+    section { padding: 30px 20px; border-bottom: 1px solid #eee; }
+    .section-title { color: var(--globalx-dark); font-size: 1.8em; border-left: 5px solid var(--globalx-red); padding-left: 10px; margin-bottom: 20px; }
+    p { line-height: 1.7; margin-bottom: 15px; }
+
+    /* Animazioni (Mantenute) */
+    .logo-placeholder { height: 50px; width: auto; margin-bottom: 15px; opacity: 0; animation: fadeInDown 1s ease-out 0.3s forwards; }
+    @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+    
+    /* BANNER IMMAGINE (USA TAG IMG) */
+    .image-banner { height: 300px; margin: 0; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 2em; font-weight: bold; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); position: relative; overflow: hidden; }
+    .image-banner img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .image-text { position: relative; z-index: 2; padding: 20px; background-color: rgba(0, 0, 0, 0.4); border-radius: 5px; }
+    
+    /* ****************************************************** */
+    /* STILI OPERATORI (ADATTATI A Global X) */
+    /* ****************************************************** */
+
+    .airlines-container {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: var(--light-bg);
+        border-top: 5px solid var(--globalx-red);
+    }
+    
+    .airline-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--globalx-dark);
+        color: var(--white);
+        text-decoration: none;
+        padding: 8px 15px;
+        margin: 10px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border: 2px solid var(--globalx-red);
+    }
+
+    .airline-button:hover {
+        background-color: var(--globalx-red);
+        color: var(--white);
+        transform: translateY(-3px);
+        border-color: var(--globalx-dark);
+    }
+    
+    .airline-logo {
+        height: 20px; 
+        width: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    .airline-button.disabled {
+        background-color: #ccc;
+        color: #666;
+        cursor: not-allowed;
+        opacity: 0.7;
+        border-color: #999;
+    }
+    .airline-button.disabled:hover {
+         transform: none;
+         background-color: #ccc;
+         color: #666;
+    }
+
+    /* Nuovo Stile Contatti */
+    .contact-section-globalx {
+        text-align: center; 
+        padding: 40px; 
+        background-color: var(--globalx-dark); 
+        color: var(--white); 
+        border-radius: 0 0 10px 10px;
+    }
+    .contact-section-globalx h2 {
+        color: var(--globalx-red); /* Rosso per l'intestazione */
+        font-size: 2em; 
+        margin-top: 0;
+    }
+    .contact-email-box {
+        font-size: 1.5em; 
+        font-weight: bold; 
+        padding: 10px 20px; 
+        background-color: var(--white); 
+        color: var(--globalx-dark); 
+        display: inline-block; 
+        border-radius: 5px; 
+        letter-spacing: 1px;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="globalx-container">
+
+    <header class="header-dynamic">
+        <img src="https://assets.planespotters.net/files/airlines/9/global-x_6510b9_opk.png" alt="Logo Global X" class="logo-placeholder">
+        
+        <h1>Global X e l'Airbus A320 Family</h1>
+        <p class="subtitle">La spina dorsale delle operazioni charter e ACMI tra USA, Caraibi e America Latina.</p>
+    </header>
+
+    <div class="image-banner">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/N284GX_-_KHPN_-_11-10-23.jpg" alt="Airbus A320 Global X Airlines" loading="lazy">
+        
+        <span class="image-text">Affidabilità per l'ACMI e il Charter</span>
+    </div>
+    <section>
+        <h2 class="section-title">Centralità dell'A320 Family nella Flotta</h2>
+        <p>Global X (Global Crossing Airlines) ha costruito la sua flotta concentrandosi interamente sugli aeromobili **Airbus**. La famiglia A320, inclusi i modelli **A320** e **A321**, è essenziale per le sue operazioni di leasing con equipaggio (ACMI) e voli charter per tour operator e squadre sportive in Nord America, nei Caraibi e in Sud America.</p>
+        
+        <p>L'utilizzo di un unico tipo di aereo (single-type fleet) porta a significativi **vantaggi operativi**, semplificando la formazione dei piloti e la manutenzione, un fattore chiave per una compagnia specializzata in leasing flessibile.</p>
+        
+        <div class="highlight-box">
+            <strong>Specializzazione:</strong> La flotta standardizzata di Airbus A320/A321 permette a Global X di offrire rapidamente aeromobili a compagnie aeree terze che necessitano di capacità aggiuntiva a breve termine.
+        </div>
+    </section>
+
+    <section style="background-color: var(--light-bg);">
+        <h2 class="section-title">Focus sul Mercato Charter</h2>
+        <p>L'A320 è il velivolo ideale per le rotte a medio raggio servite da Global X. La sua comprovata affidabilità e la capacità di trasportare un elevato numero di passeggeri lo rendono la scelta preferita per i contratti charter ad alto volume e per il segmento Cargo, grazie alla conversione di alcuni A321 in A321 Freighter.</p>
+    </section>
+
+    <div class="airlines-container">
+        <h3>Altri Modelli Airbus nella Flotta Global X</h3>
+        <p>L'A320 è affiancato da altri modelli per coprire l'intera rete di rotte.</p>
+
+        <a href="#" class="airline-button" style="border-color: var(--globalx-red); background-color: var(--globalx-red); color: var(--white);">
+            <img src="https://assets.planespotters.net/files/airlines/9/global-x_6510b9_opk.png" alt="Logo Global X" class="airline-logo">
+            A320 (Passenger) (Core)
+        </a>
+
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://assets.planespotters.net/files/airlines/9/global-x_6510b9_opk.png" alt="Logo Global X" class="airline-logo">
+            A321 (Passenger)
+        </a>
+        
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://assets.planespotters.net/files/airlines/9/global-x_6510b9_opk.png" alt="Logo Global X" class="airline-logo">
+            A321 Freighter (Cargo)
+        </a>
+        
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://assets.planespotters.net/files/airlines/9/global-x_6510b9_opk.png" alt="Logo Global X" class="airline-logo">
+            Altri Aerei (Prossimamente)
+        </a>
+        <a href="airbus" class="airline-button">
+            <img src="https://www.evanswarrington.co.uk/wp-content/uploads/2015/11/Airbus_logo_White-1024x247.png" alt="Logo Airbus" class="airline-logo"> (PRODUTTORE)
+          
+        </a>
+
+    </div>
+    
+    <section class="contact-section-globalx">
+        <h2>Richiesta di Inclusione nella Rubrica/Database</h2>
+        <p style="font-size: 1.1em; margin-bottom: 25px;">
+            Se desiderate l'aggiunta di un nuovo **Produttore**, un **Modello di Aereo** specifico o una **Compagnia Aerea**
+            all'interno della nostra rubrica o database di riferimento, vi preghiamo di inoltrare la vostra richiesta al seguente indirizzo:
+        </p>
+        <p class="contact-email-box">
+            <a href="mailto:campaign.aviationeagle.info@gmail.com" style="text-decoration: none; color: var(--globalx-dark);">
+                campaign.aviationeagle.info@gmail.com
+            </a>
+        </p>
+        <p style="margin-top: 25px; font-size: 0.9em; opacity: 0.8; color: #aaa;">
+            Il nostro team valuterà l'inclusione e vi contatterà per eventuali chiarimenti.
+        </p>
+    </section>
+
+
+</div> 
+</body>
+</html>
