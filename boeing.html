@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<style>
+    /* 1. VARIABILI E STILI GLOBALI (Palette Boeing: Blu scuro e Blu Royal) */
+    :root {
+        --boeing-blue-dark: #003057; /* Blu Scuro Istituzionale Boeing */
+        --boeing-blue-light: #007bc1; /* Blu di Accento */
+        --highlight-color: #f7931e;
+        --light-bg: #f7f7f7;
+        --white: #ffffff;
+    }
+
+    .boeing-container {
+        max-width: 950px;
+        margin: 30px auto;
+        padding: 0 15px;
+        background-color: var(--white);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* ********** STILI DELLE SEZIONI (Adattati) ********** */
+
+    .header-dynamic { text-align: center; padding: 30px 0 20px; background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%); }
+    .logo-placeholder { height: 50px; width: auto; margin-bottom: 15px; opacity: 0; animation: fadeInDown 1s ease-out 0.3s forwards; }
+    h1 { color: var(--boeing-blue-dark); font-size: 2.8em; margin: 0; }
+    .subtitle { color: #666; font-style: italic; margin-top: 5px; margin-bottom: 20px; font-size: 1.1em; }
+    
+    section { padding: 30px 20px; border-bottom: 1px solid #eee; }
+    
+    .section-title { color: var(--boeing-blue-dark); font-size: 1.8em; border-left: 5px solid var(--boeing-blue-light); padding-left: 10px; margin-bottom: 20px; opacity: 0; animation: fadeIn 1s ease-out 0.5s forwards; }
+
+    /* Animazioni (Mantenute) */
+    @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+    @keyframes scaleIn { 0% { opacity: 0; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1); } }
+    
+    p { line-height: 1.7; margin-bottom: 15px; }
+
+    .highlight-box { background-color: #e6f7ff; border-radius: 8px; padding: 20px; margin: 25px 0; border: 1px solid var(--boeing-blue-light); opacity: 0; transform: scale(0.95); animation: scaleIn 1s ease-out 0.8s forwards; }
+    .highlight-box strong { color: var(--boeing-blue-light); }
+    
+    /* BANNER IMMAGINE (USA TAG IMG - SOLUZIONE ROBUSTA) */
+    .image-banner { height: 300px; margin: 0; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 2em; font-weight: bold; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); position: relative; overflow: hidden; }
+    .image-banner img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .image-text { position: relative; z-index: 2; padding: 20px; background-color: rgba(0, 0, 0, 0.2); border-radius: 5px; }
+
+
+    /* PULSANTI DINAMICI (Adattati) */
+    .model-buttons-container { text-align: center; padding: 30px 20px 40px; background-color: var(--light-bg); border-radius: 0 0 10px 10px; }
+    .model-buttons-container h3 { color: var(--boeing-blue-dark); margin-bottom: 20px; }
+    .model-button { display: inline-block; background-color: var(--boeing-blue-light); color: var(--white); text-decoration: none; padding: 10px 18px; margin: 8px; border-radius: 6px; font-weight: bold; transition: background-color 0.3s ease, transform 0.2s ease; border: none; cursor: pointer; }
+    .model-button:hover:not(.disabled) { background-color: #003057; transform: translateY(-2px); }
+    .model-button.disabled { background-color: #ccc; color: #666; cursor: not-allowed; opacity: 0.7; box-shadow: none; }
+    .model-button.hidden { display: none !important; }
+
+</style>
+</head>
+<body>
+
+<div class="boeing-container">
+
+    <header class="header-dynamic">
+        <img src="https://1000logos.net/wp-content/uploads/2016/10/Logo-Boeing.png" alt="Logo Boeing" class="logo-placeholder">
+        
+        <h1>Boeing: L'Icona dell'Ingegneria Americana</h1>
+        <p class="subtitle">Dall'aviazione commerciale alla conquista dello spazio, un secolo di leadership.</p>
+    </header>
+
+    <div class="image-banner">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Boeing_787_N1015B_ANA_Airlines_%2827611880663%29_%28cropped%29.jpg/1200px-Boeing_787_N1015B_ANA_Airlines_%2827611880663%29_%28cropped%29.jpg" alt="Boeing Dreamliner in volo" loading="lazy">
+        
+        <span class="image-text">Innovazione e Lungo Raggio</span>
+    </div>
+    <section>
+        <h2 class="section-title">Le Radici del Secolo Aereo</h2>
+        <p>Fondata nel 1916 a Seattle, Boeing è da sempre sinonimo di aviazione americana. La sua storia è costellata di successi, dall'iconico 747 "Regina dei Cieli" all'ultramoderno 787 Dreamliner, mantenendo una storica rivalità con la controparte europea, Airbus.</p>
+        
+        <div class="highlight-box">
+            <p><strong>Dato Cruciale:</strong> Il Boeing 747 è stato il primo aereo wide-body (doppio corridoio) al mondo, un vero punto di svolta che ha reso accessibile il trasporto aereo di massa.</p>
+        </div>
+        
+        <div class="image-banner">
+        <img src="https://aeroaffaires.it/wp-content/uploads/2019/07/boeing-747-400-ext-800x430-c-center.jpg" alt="Boeing 747 Delta in volo" loading="lazy">
+        
+        <span class="image-text">Rivoluzione del volo</span>
+    </div>
+        <h2 class="section-title">Le Aree di Business</h2>
+        <p>L'azienda è strutturata in tre divisioni principali che coprono l'intero spettro del settore aerospaziale:</p>
+        <ul>
+            <li><strong>Boeing Commercial Airplanes (BCA):</strong> Il core business, produttore di aerei di linea come il 737, 777 e 787.</li>
+            <li><strong>Boeing Defense, Space & Security (BDS):</strong> Sviluppa caccia, elicotteri, droni e sistemi di difesa avanzati per governi di tutto il mondo.</li>
+            <li><strong>Boeing Global Services (BGS):</strong> Fornisce servizi, manutenzione, formazione e modifiche per l'aviazione commerciale e militare globale.</li>
+        </ul>
+    </section>
+
+    <section style="background-color: var(--light-bg);">
+        <h2 class="section-title">I Modelli che Hanno Definito il Volo</h2>
+        <p>Il **737 MAX** (versione rinnovata del best-seller 737) è la risposta di Boeing al concorrente A320neo, focalizzato su efficienza e cortoraggio. Per il lungo raggio, il **787 Dreamliner** sfrutta l'uso intensivo di materiali compositi, offrendo un'esperienza di bordo migliorata e un'efficienza senza precedenti.</p>
+    </section>
+
+    <div class="model-buttons-container">
+        <h3>Esplora la Famiglia Boeing</h3>
+        <p>Scopri i modelli iconici del produttore americano.</p>
+
+        <a href="boeing/b38m" class="model-button">Boeing B38M</a>
+        
+        <a href="pagina-inesistente" class="model-button disabled">Boeing 777 / 777X</a>
+        <a href="pagina-inesistente" class="model-button disabled">Boeing 787 Dreamliner</a>
+        
+        <a href="pagina-inesistente" class="model-button disabled">Boeing 747 (Eredità Jumbo)</a>
+
+        <a href="pagina-inesistente" class="model-button hidden">Boeing 767</a>
+    </div>
+
+</div>
+
+</body>
+</html>
