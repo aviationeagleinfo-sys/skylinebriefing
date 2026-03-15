@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<style>
+    /* 1. VARIABILI E STILI GLOBALI (Palette ITA Airways: Blu e Azzurro) */
+    :root {
+        --ita-blue-dark: #002244; /* Blu Scuro Istituzionale ITA */
+        --ita-azure-light: #00a0e9; /* Azzurro ITA/Bandiera */
+        --highlight-color: #f7931e; /* Arancione/Giallo per l'enfasi */
+        --light-bg: #f7f7f7;
+        --white: #ffffff;
+    }
+
+    .ita-container {
+        max-width: 950px;
+        margin: 30px auto;
+        padding: 0 15px;
+        background-color: var(--white);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* ********** STILI GENERALI ********** */
+    
+    .header-dynamic { text-align: center; padding: 30px 0 20px; background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%); }
+    h1 { color: var(--ita-blue-dark); font-size: 2.8em; margin: 0; }
+    .subtitle { color: #666; font-style: italic; margin-top: 5px; margin-bottom: 20px; font-size: 1.1em; }
+    section { padding: 30px 20px; border-bottom: 1px solid #eee; }
+    .section-title { color: var(--ita-blue-dark); font-size: 1.8em; border-left: 5px solid var(--ita-azure-light); padding-left: 10px; margin-bottom: 20px; }
+    p { line-height: 1.7; margin-bottom: 15px; }
+
+    /* Animazioni (Mantenute) */
+    .logo-placeholder { height: 50px; width: auto; margin-bottom: 15px; opacity: 0; animation: fadeInDown 1s ease-out 0.3s forwards; }
+    @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+    
+    /* BANNER IMMAGINE (USA TAG IMG) */
+    .image-banner { height: 300px; margin: 0; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 2em; font-weight: bold; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); position: relative; overflow: hidden; }
+    .image-banner img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .image-text { position: relative; z-index: 2; padding: 20px; background-color: rgba(0, 0, 0, 0.2); border-radius: 5px; }
+    
+    /* ****************************************************** */
+    /* STILI OPERATORI (ADATTATI A ITA) */
+    /* ****************************************************** */
+
+    .airlines-container {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: var(--light-bg);
+        border-top: 5px solid var(--ita-azure-light);
+    }
+    
+    .airline-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--white);
+        color: var(--ita-blue-dark);
+        text-decoration: none;
+        padding: 8px 15px;
+        margin: 10px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border: 2px solid var(--ita-azure-light);
+    }
+
+    .airline-button:hover {
+        background-color: #ffd57a;
+        color: var(--white);
+        transform: translateY(-3px);
+        border-color: var(--ita-blue-dark);
+    }
+    
+    .airline-logo {
+        height: 20px; 
+        width: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    .airline-button.disabled {
+        background-color: #ccc;
+        color: #666;
+        cursor: not-allowed;
+        opacity: 0.7;
+        border-color: #999;
+    }
+    .airline-button.disabled:hover {
+         transform: none;
+         background-color: #ccc;
+         color: #666;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="ita-container">
+
+    <header class="header-dynamic">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/ITA_Airways_Logo.svg/1280px-ITA_Airways_Logo.svg.png" alt="Logo Ita" class="logo-placeholder">
+        
+        <h1>L'Airbus A320 al Servizio di ITA Airways</h1>
+        <p class="subtitle">Il pilastro del network nazionale e inter-europeo, vestito con la livrea azzurra.</p>
+    </header>
+
+    <div class="image-banner">
+        <img src="https://cdn.flightsim.to/images/22/a32nx-ita-airways-real-livery-dOuKi.jpg" alt="Airbus A320 ITA Airways" loading="lazy">
+        
+        <span class="image-text">Efficienza Moderna, Stile Italiano</span>
+    </div>
+    <section>
+        <h2 class="section-title">Centralità dell'A320 nella Nuova Flotta</h2>
+        <p>ITA Airways ha impostato la sua strategia di rinnovamento della flotta concentrandosi quasi esclusivamente su aeromobili **Airbus**. All'interno di questa strategia, la famiglia A320 riveste un ruolo fondamentale come cavallo di battaglia per collegare le città italiane e le principali destinazioni europee.</p>
+        
+        <p>I modelli in servizio, compresi i moderni **A320neo**, offrono ai passeggeri una cabina rinnovata e alla compagnia una significativa riduzione dei costi operativi e dell'impatto ambientale.</p>
+        
+        <div class="highlight-box">
+            <strong>Innovazione:</strong> L'A320neo di ITA Airways si distingue per essere tra gli aeromobili più silenziosi ed efficienti della sua categoria, supportando l'impegno della compagnia verso la sostenibilità.
+        </div>
+    </section>
+
+    <section style="background-color: var(--light-bg);">
+        <h2 class="section-title">Vantaggi Operativi e Passeggeri</h2>
+        <p>L'omogeneità della flotta su base Airbus permette a ITA di semplificare la manutenzione e la formazione del personale di volo (Piloti e Assistenti di Volo), ottimizzando l'efficienza. A bordo, i passeggeri beneficiano di interni moderni e dell'esperienza di cabina silenziosa offerta dalla serie neo.</p>
+    </section>
+
+    <div class="airlines-container">
+        <h3>Altri Modelli Airbus nella Flotta ITA</h3>
+        <p>L'A320 è affiancato da altri modelli per coprire l'intera rete di rotte.</p>
+
+        <a href="#" class="airline-button" style="border-color: red; color: red;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/ITA_Airways_Logo.svg/1280px-ITA_Airways_Logo.svg.png" alt="Logo ITA Airways" class="airline-logo">
+            A320 di ITA Airways (Core)
+        </a>
+
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/ITA_Airways_Logo.svg/1280px-ITA_Airways_Logo.svg.png" alt="Logo ITA Airways" class="airline-logo">
+            A321 Neo (Medio Raggio)
+        </a>
+        
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/ITA_Airways_Logo.svg/1280px-ITA_Airways_Logo.svg.png" alt="Logo ITA Airways" class="airline-logo">
+            A330 Neo (Intercontinentale)
+        </a>
+
+        <a href="pagina-inesistente" class="airline-button disabled">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/ITA_Airways_Logo.svg/1280px-ITA_Airways_Logo.svg.png" alt="Logo ITA Airways" class="airline-logo">
+            A350 (Intercontinentale)
+        </a>
+        
+        <a href="pagina-inesistente" class="airline-button disabled">
+             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/ITA_Airways_Logo.svg/1280px-ITA_Airways_Logo.svg.png" alt="Logo ITA Airways" class="airline-logo">
+            A319 (Corto Raggio)
+        </a>
+
+    </div>
+    </div>
+
+</body>
+</html>
