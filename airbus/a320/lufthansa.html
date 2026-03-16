@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>A320 Lufthansa - Aviation Eagle</title>
+    <link rel="icon" type="image/png" href="media/LufthansaLogo(Compact,Old).jpg">
+    
+    <style>
+        :root {
+            --lh-blue: #001f5c;
+            --lh-yellow: #ffbc00;
+            --light-bg: #f4f7f9;
+            --white: #ffffff;
+            --text-main: #2c3e50;
+        }
+
+        body { background-color: #e9ecef; margin: 0; padding: 0; }
+
+        .lh-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: var(--white);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-main);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        .header-dynamic { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: linear-gradient(180deg, #fff 0%, var(--light-bg) 100%); 
+        }
+        .logo-placeholder { height: 50px; margin-bottom: 20px; }
+        h1 { color: var(--lh-blue); font-size: 2.5em; margin: 0; letter-spacing: -0.5px; }
+        .subtitle { color: #555; font-style: italic; margin: 10px 0; font-size: 1.1em; }
+
+        /* BANNER */
+        .image-banner { 
+            height: 380px; 
+            position: relative; 
+            display: flex; 
+            align-items: flex-end; 
+            overflow: hidden;
+        }
+        .image-banner img { 
+            position: absolute; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            object-fit: cover; 
+            z-index: 1; 
+        }
+        .image-text { 
+            position: relative; 
+            z-index: 2; 
+            margin: 0 0 30px 40px;
+            padding: 12px 25px; 
+            background-color: rgba(0, 31, 92, 0.85); 
+            color: var(--white);
+            border-left: 6px solid var(--lh-yellow);
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+
+        /* SECTIONS */
+        section { padding: 40px; border-bottom: 1px solid #eee; }
+        .section-title { 
+            color: var(--lh-blue); 
+            font-size: 1.9em; 
+            border-left: 5px solid var(--lh-yellow); 
+            padding-left: 15px; 
+            margin-bottom: 25px; 
+        }
+        p { line-height: 1.8; margin-bottom: 20px; }
+
+        /* FLOTTA - PULSANTI SINGOLI */
+        .fleet-grid-container {
+            background-color: var(--light-bg);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            max-width: 900px;
+            margin: 30px auto 0;
+        }
+
+        .fleet-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--white);
+            color: var(--lh-blue);
+            text-decoration: none;
+            padding: 15px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85em;
+            transition: all 0.2s ease;
+            border: 1px solid #ccc;
+        }
+        .fleet-button:hover {
+            background-color: var(--lh-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+            border-color: var(--lh-blue);
+        }
+        .fleet-button img { 
+            height: 22px; 
+            margin-bottom: 10px; 
+        }
+        .fleet-button.active { 
+            border: 2px solid var(--lh-yellow); 
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="lh-container">
+    <header class="header-dynamic">
+        <img src="media/LufthansaLogo.png" alt="Logo Lufthansa" class="logo-placeholder">
+        <h1>Analisi Flotta Lufthansa</h1>
+        <p class="subtitle">Ottimizzazione operativa e transizione verso la flotta di nuova generazione.</p>
+    </header>
+
+    <div class="image-banner">
+        <img src="media/LufthansaA320.avif" alt="Lufthansa Fleet">
+        <span class="image-text">L'Airbus A320 al centro del Network</span>
+    </div>
+
+    <section>
+        <h2 class="section-title">Efficienza nel Corto e Medio Raggio</h2>
+        <p>L'Airbus A320 costituisce il pilastro fondamentale della flotta Lufthansa, garantendo una connettività fluida tra gli hub di Francoforte e Monaco verso oltre 100 destinazioni europee. L'introduzione della variante **neo** ha ridotto il consumo di carburante del 15% rispetto ai modelli precedenti.</p>
+    </section>
+
+    <div class="fleet-grid-container">
+        <h3>Specifiche Singolo Aeromobile</h3>
+        <div class="fleet-grid">
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">A319</a>
+            <a href="#" class="fleet-button active"><img src="media/LufthansaLogo(Compact).png" alt="LH">A320</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">A320neo</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">A321</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">A321neo</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">A330-300</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">A340-300</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">A340-600</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">A350-900</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">A380</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">747-400</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">747-8i</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">787-9</a>
+            <a href="#" class="fleet-button"><img src="media/LufthansaLogo(Compact).png" alt="LH">777-9</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
