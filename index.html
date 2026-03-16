@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skyline Briefing | Aviation Eagle Project</title>
+    
+    <title>Skyline Briefing | Analisi Strategica e News Aviazione | Aviation Eagle</title>
+    <meta name="description" content="Skyline Briefing: Il tuo osservatorio privilegiato sull'aviazione civile e militare. Analisi tecniche Airbus, Boeing, strategie di flotta e news aeronautiche. Powered by Aviation Eagle.">
+    <meta name="keywords" content="aviazione, news aviazione, analisi flotta, Airbus, Boeing, A320neo, B737 MAX, ingegneria aeronautica, Aviation Eagle, Skyline Briefing, ITA Airways, strategie aeree, low-cost news">
+    <meta name="author" content="Aviation Eagle">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Skyline Briefing | Il Futuro dei Cieli">
+    <meta property="og:description" content="Dalle strategie di flotta alle innovazioni tecniche: il briefing definitivo per i professionisti del volo.">
+    <meta property="og:image" content="https://sb.aviationeagle.co.uk/media/SkyLine.png">
+    <meta property="og:url" content="https://aviationeagle.co.uk">
+    <meta property="og:type" content="website">
+
     <link rel="icon" type="image/png" href="media/SkyLine.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary-blue: #0a192f;
@@ -15,6 +28,7 @@
             --text-dim: #8892b0;
             --white: #ffffff;
             --nav-height: 80px;
+            --banner-height: 40px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,6 +40,31 @@
             line-height: 1.7;
         }
 
+        /* --- AVIATION EAGLE BRAND BANNER --- */
+        .brand-banner {
+            height: var(--banner-height);
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10000;
+            transition: background 0.3s;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .brand-banner:hover { background: #005fa3; }
+        .brand-banner img { height: 22px; width: auto; border-radius: 4px; }
+        .brand-banner span { 
+            color: var(--white); 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            letter-spacing: 0.5px;
+        }
+
         /* --- NAVIGATION --- */
         nav {
             background: var(--primary-blue);
@@ -35,7 +74,7 @@
             align-items: center;
             padding: 0 5%;
             position: fixed;
-            top: 0;
+            top: var(--banner-height); /* Posizionato sotto il banner */
             width: 100%;
             z-index: 9999;
             border-bottom: 2px solid var(--accent-blue);
@@ -45,9 +84,7 @@
         .logo span { color: var(--accent-blue); }
 
         .nav-links { display: flex; list-style: none; height: 100%; }
-        
         .menu-item { position: relative; display: flex; flex-direction: column; justify-content: center; }
-
         .link-wrapper { display: flex; align-items: center; height: 100%; }
 
         .nav-link {
@@ -94,7 +131,6 @@
             width: 100%;
         }
 
-        /* Desktop Hover */
         @media (min-width: 993px) {
             .menu-item:hover > .dropdown-menu { display: block; }
             .dropdown-item-container:hover + .dropdown-menu, 
@@ -134,7 +170,7 @@
                 width: 100%;
                 flex-direction: column;
                 background: var(--primary-blue);
-                max-height: calc(100vh - var(--nav-height));
+                max-height: calc(100vh - var(--nav-height) - var(--banner-height));
                 overflow-y: auto;
                 border-bottom: 2px solid var(--accent-blue);
             }
@@ -145,7 +181,11 @@
         }
 
         /* --- CONTENT STYLING --- */
-        .main-content { padding: 120px 7% 60px; max-width: 1000px; margin: 0 auto; }
+        .main-content { 
+            padding: calc(var(--nav-height) + var(--banner-height) + 40px) 7% 60px; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
         
         .hero-intro { margin-bottom: 3rem; }
         h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 1.5rem; color: var(--white); border-left: 5px solid var(--accent-blue); padding-left: 20px; }
@@ -172,11 +212,15 @@
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             h2 { font-size: 1.5rem; }
-            .main-content { padding-top: 100px; }
         }
     </style>
 </head>
 <body>
+
+    <a href="https://aviationeagle.co.uk" class="brand-banner" target="_blank">
+        <img src="https://sb.aviationeagle.co.uk/media/PrimoAnniversarioAviationEagle.png" alt="Aviation Eagle Logo">
+        <span>Sito creato e gestito ufficialmente da <strong>Aviation Eagle</strong></span>
+    </a>
 
    <nav>
     <a href="index.html" class="logo">SKYLINE<span>BRIEFING</span></a>
