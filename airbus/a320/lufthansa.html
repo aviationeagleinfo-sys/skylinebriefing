@@ -12,6 +12,7 @@
             --light-bg: #f4f7f9;
             --white: #ffffff;
             --text-main: #2c3e50;
+            --disabled-gray: #bdc3c7;
         }
 
         body { background-color: #e9ecef; margin: 0; padding: 0; }
@@ -74,7 +75,7 @@
         }
         p { line-height: 1.8; margin-bottom: 20px; }
 
-        /* FLOTTA - PULSANTI SINGOLI */
+        /* FLOTTA - PULSANTI */
         .fleet-grid-container {
             background-color: var(--light-bg);
             padding: 40px 20px;
@@ -102,7 +103,7 @@
             transition: all 0.2s ease;
             border: 1px solid #ccc;
         }
-        .fleet-button:hover {
+        .fleet-button:hover:not(.disabled) {
             background-color: var(--lh-blue);
             color: var(--white);
             transform: translateY(-3px);
@@ -115,6 +116,18 @@
         .fleet-button.active { 
             border: 2px solid var(--lh-yellow); 
             box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        /* STATO DISABILITATO */
+        .fleet-button.disabled {
+            background-color: #f0f0f0;
+            color: var(--disabled-gray);
+            border-color: #ddd;
+            cursor: not-allowed;
+            pointer-events: none; /* Impedisce il click */
+        }
+        .fleet-button.disabled img {
+            filter: grayscale(100%) opacity(50%);
         }
 
     </style>
@@ -141,20 +154,20 @@
     <div class="fleet-grid-container">
         <h3>Specifiche Singolo Aeromobile</h3>
         <div class="fleet-grid">
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A319</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A319</a>
             <a href="#" class="fleet-button active"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A320</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A320neo</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A321</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A321neo</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A330-300</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A340-300</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A340-600</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A350-900</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A380</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">747-400</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">747-8i</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">787-9</a>
-            <a href="pagina-inesistente" class="fleet-button"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">777-9</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A320neo</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A321</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A321neo</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A330-300</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A340-300</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A340-600</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A350-900</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">A380</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">747-400</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">747-8i</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">787-9</a>
+            <a href="#" class="fleet-button disabled"><img src="https://sb.aviationeagle.co.uk/media/LufthansaLogo(Compact).png" alt="LH">777-9</a>
         </div>
     </div>
 </div>
